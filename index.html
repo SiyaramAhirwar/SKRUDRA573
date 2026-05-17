@@ -892,19 +892,21 @@ footer{
   justify-content:center;
 
   overflow:auto;
+  touch-action:pan-x pan-y;
 
   padding:40px;
 
 }
 
-.lightbox img{
 
-  max-width:none;
+
+.lightbox img{
 
   width:auto;
   height:auto;
 
-  max-height:none;
+  max-width:100%;
+  max-height:100vh;
 
   object-fit:contain;
 
@@ -915,6 +917,8 @@ footer{
   cursor:grab;
 
   user-select:none;
+
+  transform-origin:center center;
 
 }
 
@@ -1791,6 +1795,8 @@ function resetZoom(){
 }
 
 // UPDATE ZOOM
+
+
 
 function updateZoom(){
 
