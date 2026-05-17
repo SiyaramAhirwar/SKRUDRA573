@@ -2,889 +2,1001 @@
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sanjay & Bebi Wedding Memories</title>
+<title>Sanjay & Bebi Wedding Memories</title>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+/* ===================================
+   GLOBAL
+=================================== */
 
-    :root{
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-      --primary:#c24f69;
-      --primary-dark:#a63f57;
-      --secondary:#f9d6dc;
+:root{
 
-      --bg:#faf8f8;
-      --white:#ffffff;
-      --text:#2d2d2d;
-      --gray:#666;
+  --primary:#c24f69;
+  --primary-dark:#a63f57;
 
-      --shadow:0 10px 35px rgba(0,0,0,0.08);
+  --bg:#faf8f8;
+  --white:#ffffff;
+  --text:#2d2d2d;
+  --gray:#666;
 
-      --section-gradient:
-      linear-gradient(
-      135deg,
-      #fff5f6 0%,
-      #fff0f2 50%,
-      #fde8ec 100%
-      );
+  --shadow:0 10px 35px rgba(0,0,0,0.08);
 
-    }
+  --section-gradient:
+  linear-gradient(
+  135deg,
+  #fff5f6 0%,
+  #fff0f2 50%,
+  #fde8ec 100%
+  );
 
-    body.dark-mode{
+}
 
-      --bg:#121212;
-      --white:#1f1f1f;
-      --text:#f3f3f3;
-      --gray:#d1d1d1;
+body.dark-mode{
 
-      --shadow:0 10px 35px rgba(0,0,0,0.35);
+  --bg:#121212;
+  --white:#1f1f1f;
+  --text:#f3f3f3;
+  --gray:#d1d1d1;
 
-      --section-gradient:
-      linear-gradient(
-      135deg,
-      #2b1f24 0%,
-      #1f1b24 50%,
-      #24191f 100%
-      );
+  --shadow:0 10px 35px rgba(0,0,0,0.35);
 
-    }
+  --section-gradient:
+  linear-gradient(
+  135deg,
+  #2b1f24 0%,
+  #1f1b24 50%,
+  #24191f 100%
+  );
 
-    body{
+}
 
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-      transition:0.4s;
+body{
 
-    }
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  transition:0.4s;
 
-    img{
-      width:100%;
-      display:block;
-    }
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    .container{
+img{
+  width:100%;
+  display:block;
+}
 
-      width:90%;
-      max-width:1350px;
-      margin:auto;
+.container{
 
-    }
+  width:90%;
+  max-width:1350px;
+  margin:auto;
 
-    section{
-      padding:100px 0;
-      transition:0.4s;
-    }
+}
 
-    /* ===================================
-       DARK MODE TOGGLE
-    =================================== */
+section{
+  padding:100px 0;
+}
 
-    .theme-toggle{
+/* ===================================
+   DARK MODE
+=================================== */
 
-      position:fixed;
-      right:13px;
-      bottom:13px;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      background:linear-gradient(to right,#c24f69,#a63f57);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:20px;
-      cursor:pointer;
-      z-index:9999;
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-      transition:0.35s;
+.theme-toggle{
 
-    }
+  position:fixed;
+  right:18px;
+  bottom:18px;
 
-    .theme-toggle:hover{
+  width:45px;
+  height:45px;
 
-      transform:scale(1.2) rotate(15deg);
+  border-radius:50%;
 
-    }
+  background:linear-gradient(
+  to right,
+  var(--primary),
+  var(--primary-dark)
+  );
 
-    /* ===================================
-       HEADER
-    =================================== */
+  color:#fff;
 
-    header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      width:100%;
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
+  font-size:22px;
 
-    }
+  cursor:pointer;
 
-    body.dark-mode header{
+  z-index:999999;
 
-      background:rgba(20,20,20,0.9);
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
 
-    }
+  transition:0.35s;
 
-    .navbar{
+}
 
-      height:90px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+.theme-toggle:hover{
 
-    }
+  transform:scale(1.1) rotate(10deg);
 
-    .logo{
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+header{
+
+  position:sticky;
+  top:0;
+  z-index:9999;
+
+  background:rgba(255,255,255,0.88);
+
+  backdrop-filter:blur(14px);
+
+}
+
+body.dark-mode header{
+
+  background:rgba(20,20,20,0.88);
+
+}
+
+.navbar{
+
+  height:90px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+/* LOGO */
+
+.logo img{
+
+  width:82px;
+  height:82px;
+
+  border-radius:60%;
+
+  object-fit:cover;
+
+  transition:0.25s;
+
+}
+
+.logo img:hover{
+
+  transform:scale(1.08);
+
+}
+
+/* NAV LINKS */
+
+.nav-links{
+
+  display:flex;
+  align-items:center;
+  gap:28px;
+
+}
+
+.nav-links a{
+
+  font-weight:600;
+  position:relative;
+  transition:0.35s;
+
+}
+
+.nav-links a:hover{
+
+  color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+  content:"";
+  position:absolute;
+
+  left:0;
+  bottom:-7px;
+
+  width:0;
+  height:2px;
+
+  background:var(--primary);
+
+  transition:0.35s;
+
+}
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+/* SHARE BUTTON */
+
+.share-btn{
+
+  padding:14px 22px;
+
+  border-radius:14px;
+
+  background:linear-gradient(
+  to right,
+  var(--primary),
+  var(--primary-dark)
+  );
+
+  color:#fff;
+
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  transition:0.35s;
+
+}
+
+.share-btn:hover{
+
+  transform:translateY(-5px);
+
+}
+
+/* MOBILE MENU */
+
+.menu-btn{
+
+  display:none;
+  font-size:28px;
+  color:var(--primary);
+  cursor:pointer;
+
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+  to right,
+  rgba(255,248,248,0.92) 0%,
+  rgba(255,248,248,0.72) 40%,
+  rgba(255,248,248,0.15) 70%
+  ),
+
+  url('weddings/family\ girls.jpg');
+
+  background-size:cover;
+  background-position:center;
 
   display:flex;
   align-items:center;
 
 }
 
-.logo img{
+body.dark-mode .hero{
+
+  background:
+  linear-gradient(
+  to right,
+  rgba(0,0,0,0.88) 0%,
+  rgba(0,0,0,0.72) 40%,
+  rgba(0,0,0,0.25) 70%
+  ),
+
+  url('weddings/mitra1.jpg');
+
+  background-size:cover;
+  background-position:center;
+
+}
+
+.hero-content{
+  width:55%;
+}
+
+.hero-title{
+
+  font-size:72px;
+  line-height:1;
+
+  font-family:'Cormorant Garamond',serif;
+
+  margin-bottom:20px;
+
+}
+
+.hero-title span{
+
+  display:block;
+
+  color:var(--primary);
+
+  font-size:120px;
+
+  font-family:'Pinyon Script',cursive;
+
+}
+
+.hero-desc{
+
+  font-size:24px;
+  color:var(--gray);
+
+  margin-bottom:35px;
+
+}
+
+.hero-info{
+
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+
+  margin-bottom:35px;
+
+}
+
+.info{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-weight:600;
+
+}
+
+.info i{
+  color:var(--primary);
+}
+
+.hero-btn{
+
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  padding:18px 34px;
+
+  border-radius:16px;
+
+  background:linear-gradient(
+  to right,
+  var(--primary),
+  var(--primary-dark)
+  );
+
+  color:#fff;
+
+  font-weight:600;
+
+  transition:0.35s;
+
+}
+
+.hero-btn:hover{
+
+  transform:translateY(-5px);
+
+}
+
+/* ===================================
+   GOOGLE DRIVE BOX
+=================================== */
+
+.drive-gallery-box{
+
+  margin-top:45px;
+
+  background:rgba(255,255,255,0.88);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:24px;
+
+  padding:28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:25px;
+
+  border:2px solid #d7f0df;
+
+  box-shadow:var(--shadow);
+
+}
+
+body.dark-mode .drive-gallery-box{
+
+  background:rgba(30,30,30,0.88);
+
+}
+
+.drive-icon{
 
   width:80px;
   height:80px;
+
   border-radius:50%;
+
+  background:#f3fff6;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.drive-icon i{
+
+  font-size:42px;
+  color:#34a853;
+
+}
+
+.drive-btn{
+
+  background:linear-gradient(
+  to right,
+  #34a853,
+  #1d8d42
+  );
+
+  color:#fff;
+
+  padding:16px 28px;
+
+  border-radius:14px;
+
+  font-weight:600;
+
+  transition:0.35s;
+
+}
+
+.drive-btn:hover{
+
+  transform:translateY(-5px);
+
+}
+
+/* ===================================
+   COMMON SECTION
+=================================== */
+
+.gradient-section{
+
+  background:var(--section-gradient);
+
+}
+
+.section-title{
+
+  text-align:center;
+
+  margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+  font-size:58px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  margin-bottom:12px;
+
+}
+
+.section-title p{
+
+  color:var(--gray);
+
+}
+
+.divider{
+
+  margin-top:15px;
+
+  color:var(--primary);
+
+}
+
+/* ===================================
+   PINTEREST GALLERY
+=================================== */
+
+.pinterest-gallery{
+
+  column-count:4;
+  column-gap:18px;
+
+}
+
+.gallery-item{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:24px;
+
+  margin-bottom:18px;
+
+  break-inside:avoid;
+
+  cursor:pointer;
+
+  box-shadow:var(--shadow);
+
+}
+
+.gallery-item img{
+
+  width:100%;
+
+  border-radius:24px;
+
+  transition:0.45s;
+
+}
+
+.gallery-item:hover img{
+
+  transform:scale(1.05);
+
+}
+
+/* ===================================
+   STORY
+=================================== */
+
+.story-wrapper{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:50px;
+
+  align-items:center;
+
+}
+
+.story-img img{
+
+  height:550px;
+
+  border-radius:30px;
+
   object-fit:cover;
 
 }
 
-/* HOVER EFFECT */
+.story-content h3{
 
-.logo img:hover{
+  font-size:44px;
 
-  transform:scale(1.09);
+  margin-bottom:20px;
+
+  font-family:'Cormorant Garamond',serif;
 
 }
 
-    .nav-links{
+.story-content p{
 
-      display:flex;
-      align-items:center;
-      gap:28px;
+  color:var(--gray);
 
-    }
+  line-height:1.9;
 
-    .nav-links a{
+  margin-bottom:18px;
 
-     /* font-weight:600;
-      position:relative;
-      transition:0.3s;*/
-
-      text-decoration: none;
-      font-weight: 550;
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      transition: all 0.2s;
-      position: relative;
-      padding: 0.3rem 0;
-
-    }
-
-    .nav-links a:hover{
-
-      color:var(--primary);
-
-      color: #3b82f6;
-
-    }
-
-    .nav-links a::after{
-
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-8px;
-      width:0;
-      height:2px;
-      background:var(--primary);
-      transition:0.3s;
-
-    }
-
-    .nav-links a:hover::after{
-      width:100%;
-    }
-
-    .share-btn{
-
-      padding:14px 22px;
-      border-radius:14px;
-      background:linear-gradient(to right,var(--primary),var(--primary-dark));
-      color:#fff;
-      font-weight:600;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      transition:0.35s;
-
-    }
-
-    .share-btn:hover{
-
-      transform:translateY(-5px);
-      box-shadow:0 15px 35px rgba(194,79,105,0.3);
-
-    }
-
-    .menu-btn{
-
-      display:none;
-      font-size:28px;
-      cursor:pointer;
-      color:var(--primary);
-
-    }
-
-    /* ===================================
-       HERO
-    =================================== */
-
-    .hero{
-
-      min-height:100vh;
-
-      background:
-      linear-gradient(
-      to right,
-      rgba(255,248,248,0.92) 0%,
-      rgba(255,248,248,0.75) 40%,
-      rgba(255,248,248,0.15) 70%
-      ),
-
-      url('images/last\ invite.png'); 
-
-      
-      background-size:cover;
-      background-position:center;
-
-      display:flex;
-      align-items:center;
-
-    }
-
-    body.dark-mode .hero{
-
-      background:
-      linear-gradient(
-      to right,
-      rgba(0,0,0,0.88) 0%,
-      rgba(0,0,0,0.72) 40%,
-      rgba(0,0,0,0.25) 70%
-      ),
-
-      url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1800&auto=format&fit=crop');
-
-      background-size:cover;
-      background-position:center;
-
-    }
-
-    .hero-content{
-      width:55%;
-    }
-
-    .hero-title{
-
-      font-size:72px;
-      line-height:1;
-      font-family:'Cormorant Garamond',serif;
-      margin-bottom:20px;
-
-    }
-
-    .hero-title span{
-
-      display:block;
-      color:var(--primary);
-      font-size:120px;
-      font-family:'Pinyon Script',cursive;
-      margin-top:10px;
-
-    }
-
-    .hero-desc{
-
-      font-size:24px;
-      line-height:1.8;
-      color:var(--gray);
-      margin-bottom:35px;
-      max-width:600px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .hero-info{
-
-      display:flex;
-      gap:30px;
-      flex-wrap:wrap;
-      margin-bottom:35px;
-
-    }
-
-    .info{
-
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:600;
-
-    }
-
-    .info i{
-      color:var(--primary);
-    }
-
-    .hero-btn{
-
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      padding:18px 34px;
-      background:linear-gradient(to right,var(--primary),var(--primary-dark));
-      color:#fff;
-      border-radius:16px;
-      font-weight:600;
-      transition:0.35s;
-      box-shadow:0 10px 30px rgba(194,79,105,0.25);
-
-    }
-
-    .hero-btn:hover{
-
-      transform:translateY(-6px) scale(1.03);
-
-    }
-
-    /* ===================================
-       GOOGLE DRIVE BOX
-    =================================== */
-
-    .drive-gallery-box{
-
-      margin-top:45px;
-      background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(10px);
-      border-radius:24px;
-      padding:28px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:25px;
-      border:2px solid #d7f0df;
-      box-shadow:var(--shadow);
-      animation:pulseGlow 2.5s infinite;
-
-    }
-
-    body.dark-mode .drive-gallery-box{
-
-      background:rgba(30,30,30,0.85);
-
-    }
-
-    @keyframes pulseGlow{
-
-      0%{
-        box-shadow:0 0 0 rgba(52,168,83,0.2);
-      }
-
-      50%{
-        box-shadow:0 0 35px rgba(52,168,83,0.2);
-      }
-
-      100%{
-        box-shadow:0 0 0 rgba(52,168,83,0.2);
-      }
-
-    }
-
-    .drive-icon{
-
-      width:80px;
-      height:80px;
-      border-radius:50%;
-      background:#f3fff6;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-shrink:0;
-
-    }
-
-    .drive-icon i{
-
-      font-size:42px;
-      color:#34a853;
-
-    }
-
-    .drive-content h3{
-
-      font-size:28px;
-      margin-bottom:8px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .drive-content p{
-
-      color:var(--gray);
-      line-height:1.7;
-
-    }
-
-    .drive-btn{
-
-      background:linear-gradient(to right,#34a853,#1d8d42);
-      color:#fff;
-      padding:16px 28px;
-      border-radius:14px;
-      font-weight:600;
-      transition:0.35s;
-
-    }
-
-    .drive-btn:hover{
-
-      transform:translateY(-5px);
-      box-shadow:0 15px 35px rgba(52,168,83,0.3);
-
-    }
-
-    /* ===================================
-       COMMON SECTION STYLE
-    =================================== */
-
-    .gradient-section{
-
-      background:var(--section-gradient);
-
-    }
-
-    .section-title{
-
-      text-align:center;
-      margin-bottom:60px;
-
-    }
-
-    .section-title h2{
-
-      font-size:58px;
-      font-family:'Cormorant Garamond',serif;
-      margin-bottom:12px;
-
-    }
-
-    .section-title p{
-
-      max-width:700px;
-      margin:auto;
-      color:var(--gray);
-      line-height:1.8;
-
-    }
-
-    .divider{
-
-      color:var(--primary);
-      margin-top:14px;
-      font-size:22px;
-
-    }
-
-    /* ===================================
-       CARDS
-    =================================== */
-
-    .cards{
-      margin-top:-70px;
-      position:relative;
-      z-index:10;
-    }
-
-    .cards-grid{
-
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:25px;
-
-    }
-
-    .card{
-
-      background:var(--white);
-      padding:35px 25px;
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      transition:0.35s;
-
-    }
-
-    .card:hover{
-
-      transform:translateY(-10px);
-
-    }
-
-    .card-icon{
-
-      width:75px;
-      height:75px;
-      border-radius:50%;
-      background:linear-gradient(to right,#ffe4ea,#fff0f3);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:20px;
-
-    }
-
-    .card-icon i{
-
-      font-size:30px;
-      color:var(--primary);
-
-    }
-
-    .card h3{
-
-      font-size:25px;
-      margin-bottom:12px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .card p{
-
-      color:var(--gray);
-      line-height:1.7;
-
-    }
-
-    /* ===================================
-       STORY
-    =================================== */
-
-    .story-wrapper{
-
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
-
-    }
-
-    .story-img img{
-
-      border-radius:30px;
-      height:550px;
-      object-fit:cover;
-      box-shadow:var(--shadow);
-
-    }
-
-    .story-content h3{
-
-      font-size:44px;
-      margin-bottom:20px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .story-content p{
-
-      color:var(--gray);
-      line-height:1.9;
-      margin-bottom:18px;
-
-    }
-
-    /* ===================================
-       HIGHLIGHTS
-    =================================== */
-
-    .highlight-grid{
-
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-
-    }
-
-    .highlight-card{
-
-      background:var(--white);
-      border-radius:25px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      transition:0.35s;
-
-    }
-
-    .highlight-card:hover{
-
-      transform:translateY(-10px);
-
-    }
-
-    .highlight-card img{
-
-      height:260px;
-      object-fit:cover;
-
-    }
-
-    .highlight-content{
-      padding:25px;
-    }
-
-    .highlight-content h3{
-
-      font-size:28px;
-      margin-bottom:12px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .highlight-content p{
-
-      color:var(--gray);
-      line-height:1.8;
-
-    }
-
-    /* ===================================
-       GALLERY
-    =================================== */
-
-    .gallery-grid{
-
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
-
-    }
-
-    .gallery-item{
-
-      overflow:hidden;
-      border-radius:22px;
-      cursor:pointer;
-      position:relative;
-      box-shadow:var(--shadow);
-
-    }
-
-    .gallery-item img{
-
-      height:320px;
-      object-fit:cover;
-      transition:0.45s;
-
-    }
-
-    .gallery-item:hover img{
-
-      transform:scale(1.12);
-
-    }
-
-    /* ===================================
-       MEMORIES
-    =================================== */
-
-    .memory-wrapper{
-
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-
-    }
-
-    .memory-card{
-
-      background:var(--white);
-      padding:35px;
-      border-radius:25px;
-      text-align:center;
-      box-shadow:var(--shadow);
-      transition:0.35s;
-
-    }
-
-    .memory-card:hover{
-
-      transform:translateY(-10px);
-
-    }
-
-    .memory-card i{
-
-      font-size:45px;
-      color:var(--primary);
-      margin-bottom:20px;
-
-    }
-
-    .memory-card h3{
-
-      font-size:28px;
-      margin-bottom:12px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .memory-card p{
-
-      color:var(--gray);
-      line-height:1.8;
-
-    }
-
-
-
+}
 
 /* ===================================
-   WEDDING CARD SECTION
-   BIGGER WIDTH + FULL CARD VIEW
+   HIGHLIGHTS
 =================================== */
 
-.wedding-card-wrapper{
+.highlight-grid{
 
   display:grid;
-
-  /* 2 BIG CARDS PER ROW */
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:30px;
 
-  align-items:start;
-
 }
 
-.wedding-card-item{
+.highlight-card{
 
-  position:relative;
-  overflow:hidden;
-  border-radius:35px;
   background:var(--white);
+
+  border-radius:25px;
+
+  overflow:hidden;
+
   box-shadow:var(--shadow);
-  transition:0.4s;
-  cursor:pointer;
+
+  transition:0.35s;
 
 }
 
-/* CARD HOVER */
-
-.wedding-card-item:hover{
+.highlight-card:hover{
 
   transform:translateY(-10px);
 
 }
 
-/* IMAGE SIZE */
+.highlight-card img{
+
+  height:260px;
+
+  object-fit:cover;
+
+}
+
+.highlight-content{
+
+  padding:25px;
+
+}
+
+.highlight-content h3{
+
+  font-size:28px;
+
+  font-family:'Cormorant Garamond',serif;
+
+}
+
+/* ===================================
+   MEMORIES
+=================================== */
+
+.memory-wrapper{
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:30px;
+
+}
+
+.memory-card{
+
+  background:var(--white);
+
+  padding:35px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  box-shadow:var(--shadow);
+
+}
+
+.memory-card i{
+
+  font-size:45px;
+
+  color:var(--primary);
+
+  margin-bottom:20px;
+
+}
+
+/* ===================================
+   WEDDING CARD
+=================================== */
+
+.wedding-card-wrapper{
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:35px;
+
+}
+
+.wedding-card-item{
+
+  overflow:hidden;
+
+  border-radius:35px;
+
+  background:var(--white);
+
+  box-shadow:var(--shadow);
+
+  cursor:pointer;
+
+}
 
 .wedding-card-item img{
 
   width:100%;
 
-  /* HEIGHT */
-  height:850px;
+  height:900px;
 
-  /* IMPORTANT */
   object-fit:contain;
 
   background:#f8f4f1;
-
-  transition:0.45s;
 
   padding:12px;
 
 }
 
-/* IMAGE ZOOM */
+/* ===================================
+   SOCIAL
+=================================== */
 
-.wedding-card-item:hover img{
+.social-wrapper{
 
-  transform:scale(1.02);
+  text-align:center;
 
 }
 
-/* PREMIUM GLOW BORDER */
+.social-icons{
 
-.wedding-card-item::before{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
 
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:28px;
-  padding:2px;
+}
+
+.social-icon{
+
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:38px;
+
+  transition:0.35s;
+
+}
+
+.instagram{
 
   background:linear-gradient(
-    135deg,
-    #c24f69,
-    #f5b5c2,
-    #ffffff,
-    #c24f69
-  );
-
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-
-  opacity:0;
-  transition:0.4s;
+  45deg,
+  #f09433,
+  #e6683c,
+  #dc2743,
+  #cc2366,
+  #bc1888);
 
 }
 
-.wedding-card-item:hover::before{
+.facebook{
+  background:#1877f2;
+}
 
-  opacity:1;
+.whatsapp{
+  background:#25d366;
+}
+
+.social-icon:hover{
+
+  transform:translateY(-10px);
 
 }
 
 /* ===================================
-   TABLET
+   FOOTER
+=================================== */
+
+footer{
+
+  background:var(--white);
+
+  text-align:center;
+
+  padding:60px 0;
+
+}
+
+/* ===================================
+   ADVANCED LIGHTBOX
+=================================== */
+
+.lightbox{
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.96);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  visibility:hidden;
+  opacity:0;
+
+  transition:0.35s ease;
+
+  z-index:999999;
+
+  overflow:hidden;
+
+}
+
+.lightbox.active{
+
+  visibility:visible;
+  opacity:1;
+
+}
+
+.lightbox-content{
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:auto;
+
+  padding:40px;
+
+}
+
+.lightbox img{
+
+  max-width:none;
+
+  width:auto;
+  height:auto;
+
+  max-height:none;
+
+  object-fit:contain;
+
+  border-radius:18px;
+
+  transition:transform 0.3s ease;
+
+  cursor:grab;
+
+  user-select:none;
+
+}
+
+/* CLOSE BUTTON */
+
+.close-lightbox{
+
+  position:absolute;
+
+  top:18px;
+  right:28px;
+
+  font-size:50px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  z-index:1000;
+
+}
+
+/* NAV BUTTONS */
+
+.lightbox-btn{
+
+  position:absolute;
+
+  top:50%;
+  transform:translateY(-50%);
+
+  width:65px;
+  height:65px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.14);
+
+  backdrop-filter:blur(12px);
+
+  color:#fff;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+  z-index:999;
+
+  transition:0.35s;
+
+}
+
+.lightbox-btn:hover{
+
+  background:rgba(255,255,255,0.25);
+
+  transform:translateY(-50%) scale(1.08);
+
+}
+
+.prev-btn{
+  left:25px;
+}
+
+.next-btn{
+  right:25px;
+}
+
+/* ===================================
+   RESPONSIVE
 =================================== */
 
 @media(max-width:1100px){
 
+  .pinterest-gallery{
+    column-count:3;
+  }
+
+  .highlight-grid,
+  .memory-wrapper,
   .wedding-card-wrapper{
 
     grid-template-columns:1fr;
@@ -893,1104 +1005,882 @@
 
 }
 
-/* ===================================
-   MOBILE
-=================================== */
+@media(max-width:900px){
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-links{
+
+    position:absolute;
+
+    top:90px;
+    left:0;
+
+    width:100%;
+
+    background:var(--white);
+
+    flex-direction:column;
+
+    gap:25px;
+
+    padding:30px;
+
+    display:none;
+
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .share-btn{
+    display:none;
+  }
+
+  .hero-content{
+    width:100%;
+  }
+
+}
 
 @media(max-width:768px){
 
-  .wedding-card-item img{
+  .pinterest-gallery{
+    column-count:2;
+  }
 
-    height:650px;
+  .hero-title{
+    font-size:50px;
+  }
+
+  .hero-title span{
+    font-size:90px;
+  }
+
+  .drive-gallery-box{
+
+    flex-direction:column;
+
+    text-align:center;
 
   }
 
 }
 
-    /* ===================================
-       SOCIAL SECTION
-    =================================== */
+@media(max-width:500px){
 
-    .social-wrapper{
-      text-align:center;
-    }
+  .pinterest-gallery{
+    column-count:1;
+  }
 
-    .social-wrapper h2{
+}
 
-      font-size:58px;
-      margin-bottom:12px;
-      font-family:'Cormorant Garamond',serif;
-
-    }
-
-    .social-wrapper p{
-
-      color:var(--gray);
-      margin-bottom:50px;
-
-    }
-
-    .social-icons{
-
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      flex-wrap:wrap;
-
-    }
-
-    .social-box{
-      text-align:center;
-    }
-
-    .social-icon{
-
-      width:90px;
-      height:90px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size:45px;
-      transition:0.35s;
-
-    }
-
-    .social-label{
-
-      margin-top:14px;
-      font-weight:600;
-
-    }
-
-    .instagram{
-
-      background:linear-gradient(
-      45deg,
-      #f09433,
-      #e6683c,
-      #dc2743,
-      #cc2366,
-      #bc1888);
-
-    }
-
-    .instagram:hover{
-
-      transform:translateY(-10px) rotate(8deg);
-      box-shadow:0 20px 40px rgba(220,39,67,0.4);
-
-    }
-
-    .facebook{
-
-      background:#1877f2;
-
-    }
-
-    .facebook:hover{
-
-      transform:translateY(-10px);
-      box-shadow:0 20px 40px rgba(24,119,242,0.4);
-
-    }
-
-    .whatsapp{
-
-      background:#25d366;
-
-    }
-
-    .whatsapp:hover{
-
-      transform:translateY(-10px);
-      box-shadow:0 20px 40px rgba(37,211,102,0.4);
-
-    }
-
-    /* ===================================
-       FOOTER
-    =================================== */
-
-    footer{
-
-      background:var(--white);
-      text-align:center;
-      padding:60px 0;
-
-    }
-
-    footer h2{
-
-      font-size:58px;
-      color:var(--primary);
-      font-family:'Pinyon Script',cursive;
-      margin-bottom:12px;
-
-    }
-
-    footer p{
-
-      color:var(--gray);
-
-    }
-
-    /* ===================================
-       LIGHTBOX
-    =================================== */
-
-    .lightbox{
-
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.92);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      visibility:hidden;
-      opacity:0;
-      transition:0.35s;
-      z-index:9999;
-      padding:20px;
-
-    }
-
-    .lightbox.active{
-
-      visibility:visible;
-      opacity:1;
-
-    }
-
-    .lightbox img{
-
-      max-width:900px;
-      width:100%;
-      border-radius:20px;
-
-    }
-
-    .close-lightbox{
-
-      position:absolute;
-      top:30px;
-      right:40px;
-      font-size:40px;
-      color:#fff;
-      cursor:pointer;
-
-    }
-
-    /* ===================================
-       MOBILE RESPONSIVE
-    =================================== */
-
-    @media(max-width:1100px){
-
-      .cards-grid,
-      .highlight-grid,
-      .gallery-grid,
-      .memory-wrapper{
-
-        grid-template-columns:repeat(2,1fr);
-
-      }
-
-      .hero-content{
-        width:70%;
-      }
-
-      .story-wrapper{
-        grid-template-columns:1fr;
-      }
-
-    }
-
-    @media(max-width:900px){
-
-      .menu-btn{
-        display:block;
-      }
-
-      .nav-links{
-
-        position:absolute;
-        top:90px;
-        left:0;
-        width:100%;
-        background:var(--white);
-        flex-direction:column;
-        gap:25px;
-        padding:30px;
-        display:none;
-        box-shadow:var(--shadow);
-
-      }
-
-      .nav-links.active{
-        display:flex;
-      }
-
-      .share-btn{
-        display:none;
-      }
-
-      .hero{
-        padding:120px 0;
-      }
-
-      .hero-content{
-        width:100%;
-      }
-
-      .hero-title{
-        font-size:50px;
-      }
-
-      .hero-title span{
-        font-size:90px;
-      }
-
-      .drive-gallery-box{
-        flex-direction:column;
-        text-align:center;
-      }
-
-    }
-
-    @media(max-width:700px){
-
-      section{
-        padding:80px 0;
-      }
-
-      .cards-grid,
-      .highlight-grid,
-      .gallery-grid,
-      .memory-wrapper{
-
-        grid-template-columns:1fr;
-
-      }
-
-      .hero-title{
-        font-size:42px;
-      }
-
-      .hero-title span{
-        font-size:72px;
-      }
-
-      .section-title h2,
-      .social-wrapper h2{
-
-        font-size:42px;
-
-      }
-
-      .story-img img{
-        height:350px;
-      }
-
-      .social-icon{
-
-        width:75px;
-        height:75px;
-        font-size:30px;
-
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-  <!-- DARK MODE TOGGLE -->
+<!-- DARK MODE -->
 
-  <div class="theme-toggle" id="themeToggle">
+<div class="theme-toggle" id="themeToggle">
 
-    <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-moon"></i>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container navbar">
+
+  <div class="logo">
+
+    <img src="images/Logo Design.png">
 
   </div>
 
-  <!-- HEADER -->
+  <nav class="nav-links" id="navLinks">
 
-  <header>
+    <a href="#home">Home</a>
 
-    <div class="container navbar">
+    <a href="#gallery">My Gallery</a>
 
-      <div class="logo">
+    <a href="#story">Our Story</a>
 
-         <img src="images/Logo Design.png" alt="Wedding Logo">
+    <a href="#highlights">Highlights</a>
+
+    <a href="#memories">Memories</a>
+
+    <a href="#wedding-card">Wedding Card</a>
+
+    <a href="#social">Follow Me</a>
+
+  </nav>
+
+  <a href="#" class="share-btn" id="shareBtn">
+
+    <i class="fa-solid fa-share-nodes"></i>
+
+    Share others
+
+  </a>
+
+  <div class="menu-btn" id="menuBtn">
+
+    <i class="fa-solid fa-bars"></i>
+
+  </div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+  <div class="hero-content">
+
+    <h1 class="hero-title">
+
+      Our Wedding
+
+      <span>Memories</span>
+
+    </h1>
+
+    <p class="hero-desc">
+
+      A beautiful chapter of our lives that we will cherish forever.
+
+    </p>
+
+    <div class="hero-info">
+
+      <div class="info">
+
+        <i class="fa-regular fa-calendar"></i>
+
+        07 May 2026<br>
+        Day- Thursday
 
       </div>
 
-      <nav class="nav-links" id="navLinks">
+      <div class="info">
 
-        <a href="#home">Home</a>
-        <a href="#story">Our Story</a>
-        <a href="#highlights">Wedding Highlights</a>
-        <a href="#gallery">My Gallery</a>
-        <a href="#memories">Memories</a>
-        <a href="#wedding-card">weds card</a>
-        <a href="#social">Follow me</a>
+        <i class="fa-solid fa-location-dot"></i>
 
-      </nav>
+        Ram Baag Marriage Garden, Bada Malhera<br>
+        Dist. Chhatarpur (M.P.) 471405
 
-      <a href="#" class="share-btn" id="shareBtn">
+      </div>
 
-        <i class="fa-solid fa-share-nodes"></i>
+    </div>
 
-        Share This Page
+    <a href="#gallery" class="hero-btn">
+
+      View Gallery
+
+    </a>
+
+    <!-- GOOGLE DRIVE -->
+
+    <div class="drive-gallery-box">
+
+      <div class="drive-icon">
+
+        <i class="fa-brands fa-google-drive"></i>
+
+      </div>
+
+      <div class="drive-content">
+
+        <h3>View Full Album</h3>
+
+        <p>
+
+          All wedding memories are available on Google Drive.
+
+        </p>
+
+      </div>
+
+      <a href="#" class="drive-btn">
+
+        Open Album
 
       </a>
 
-      <div class="menu-btn" id="menuBtn">
-
-        <i class="fa-solid fa-bars"></i>
-
-      </div>
-
-    </div>
-
-  </header>
-
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-
-    <div class="container">
-
-      <div class="hero-content">
-
-        <h1 class="hero-title">
-
-          Our Wedding
-
-          <span>Memories</span>
-
-        </h1>
-
-        <p class="hero-desc">
-
-          A beautiful chapter of our lives that we will cherish forever.
-
-        </p>
-
-        <div class="hero-info">
-
-          <div class="info">
-
-            <i class="fa-regular fa-calendar"></i>
-
-            07 May 2026<br>
-            Day- Thursday
-
-          </div>
-
-          <div class="info">
-
-            <i class="fa-solid fa-location-dot"></i>
-
-            Ram Baag Marriage Garden, Bada Malhera, 
-            <br>Dist. Chhatarpur Madhya Pradesh 471405
-
-          </div>
-
-        </div>
-
-        <a href="#gallery" class="hero-btn">
-
-          <i class="fa-regular fa-heart"></i>
-
-          View gallery for Special Day
-
-        </a>
-
-        <!-- GOOGLE DRIVE -->
-
-        <div class="drive-gallery-box">
-
-          <div class="drive-icon">
-
-            <i class="fa-brands fa-google-drive"></i>
-
-          </div>
-
-          <div class="drive-content">
-
-            <h3>View Full Wedding Album on Google Drive</h3>
-
-            <p>
-
-              All wedding photos & videos are available securely on our Google Drive album.
-
-            </p>
-
-          </div>
-
-          <a href="YOUR_GOOGLE_DRIVE_LINK_HERE"
-          target="_blank"
-          class="drive-btn">
-
-            Open Album
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FEATURE CARDS -->
-
-  <div class="container cards">
-
-    <div class="cards-grid">
-
-      <div class="card">
-
-        <div class="card-icon">
-
-          <i class="fa-regular fa-image"></i>
-
-        </div>
-
-        <h3>Captured Moments</h3>
-
-        <p>
-
-          Every beautiful wedding moment captured forever.
-
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <div class="card-icon">
-
-          <i class="fa-solid fa-users"></i>
-
-        </div>
-
-        <h3>Family & Friends</h3>
-
-        <p>
-
-          Precious memories shared with our loved ones.
-
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <div class="card-icon">
-
-          <i class="fa-regular fa-heart"></i>
-
-        </div>
-
-        <h3>Forever Memories</h3>
-
-        <p>
-
-          Memories that we will cherish for a lifetime.
-
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <div class="card-icon">
-
-          <i class="fa-solid fa-lock"></i>
-
-        </div>
-
-        <h3>Private & Secure</h3>
-
-        <p>
-
-          Shared only with our close family and friends.
-
-        </p>
-
-      </div>
-
     </div>
 
   </div>
 
-  <!-- STORY -->
-
-  <section id="story" class="gradient-section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>Our Beautiful Story</h2>
-
-        <p>
-
-          Every love story is beautiful, but ours is our favorite.
-
-        </p>
-
-        <div class="divider">❤</div>
-
-      </div>
-
-      <div class="story-wrapper">
-
-        <div class="story-img">
-
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-        <div class="story-content">
-
-          <h3>How We Met</h3>
-
-          <p>
-
-            Sanjay and Bebi met during a College event in Chhatarpur.
-            What started as friendship slowly became forever love.
-
-          </p>
-
-          <p>
-
-            Through laughter, support, and endless memories,
-            we discovered our perfect journey together.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- HIGHLIGHTS -->
-
-  <section id="highlights">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>Wedding Highlights</h2>
-
-        <p>
-
-          Beautiful moments from our wedding celebrations.
-
-        </p>
-
-        <div class="divider">❤</div>
-
-      </div>
-
-      <div class="highlight-grid">
-
-        <div class="highlight-card">
-
-          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200&auto=format&fit=crop">
-
-          <div class="highlight-content">
-
-            <h3>Haldi Ceremony</h3>
-
-            <p>
-
-              A colorful and joyful celebration filled with traditions.
-
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="highlight-card">
-
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
-
-          <div class="highlight-content">
-
-            <h3>Wedding Rituals</h3>
-
-            <p>
-
-              Sacred rituals that united our hearts forever.
-
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="highlight-card">
-
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop">
-
-          <div class="highlight-content">
-
-            <h3>Reception Night</h3>
-
-            <p>
-
-              A magical evening full of music and happiness.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- GALLERY -->
-
-  <section id="gallery" class="gradient-section">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>Gallery Preview</h2>
-
-        <p>
-
-          Click any image to view in fullscreen.
-
-        </p>
-
-        <div class="divider">❤</div>
-
-      </div>
-
-      <div class="gallery-grid">
-
-        <div class="gallery-item">
-
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-        <div class="gallery-item">
-
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-        <div class="gallery-item">
-
-          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-        <div class="gallery-item">
-
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- MEMORIES -->
-
-  <section id="memories">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>Special Memories</h2>
-
-        <p>
-
-          Moments we will cherish forever.
-
-        </p>
-
-        <div class="divider">❤</div>
-
-      </div>
-
-      <div class="memory-wrapper">
-
-        <div class="memory-card">
-
-          <i class="fa-solid fa-camera"></i>
-
-          <h3>Photography</h3>
-
-          <p>
-
-            Every emotion beautifully captured forever.
-
-          </p>
-
-        </div>
-
-        <div class="memory-card">
-
-          <i class="fa-solid fa-music"></i>
-
-          <h3>Music & Dance</h3>
-
-          <p>
-
-            Celebration filled with happiness and energy.
-
-          </p>
-
-        </div>
-
-        <div class="memory-card">
-
-          <i class="fa-solid fa-heart"></i>
-
-          <h3>Love Forever</h3>
-
-          <p>
-
-            A new beginning with endless togetherness.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-
-
-  <!-- ===================================
-     WEDDING INVITATION CARD SECTION
-     ADD THIS SECTION AFTER MEMORIES SECTION
-=================================== -->
-
-<section id="wedding-card" class="gradient-section">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Wedding Invitation Card</h2>
-
-      <p>
-
-        A glimpse of our beautiful wedding invitation card ❤️
-
-      </p>
-
-      
-
-    </div>
-
-    <div class="wedding-card-wrapper">
-
-      <!-- CARD IMAGE 1 -->
-
-      
-      <div class="wedding-card-item card-preview">
-
-        <img
-        src="images/first invite.png"
-        alt="Wedding Card 1">
-
-      </div>
-
-      <!-- CARD IMAGE 2 -->
-
-      <div class="wedding-card-item card-preview">
-
-        <img
-        src="images/second invite.png"
-        alt="Wedding Card 2">
-
-      </div>
-
-      <!-- CARD IMAGE 3 -->
-
-      <div class="wedding-card-item card-preview">
-
-        <img
-        src="images/third invite.png"
-        alt="Wedding Card 3">
-
-      </div>
-
-      <!-- CARD IMAGE 4 -->
-
-      <div class="wedding-card-item card-preview">
-
-        <img
-        src="images/last invite.png"
-        alt="Wedding Card 4">
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-  <!-- SOCIAL SECTION -->
+<!-- PINTEREST GALLERY -->
 
-  <section class="gradient-section" id="social">
+<section id="gallery" class="gradient-section">
 
-    <div class="container">
+<div class="container">
 
-      <div class="social-wrapper">
+  <div class="section-title">
 
-        <h2>Follow & Invite Us</h2>
+    <h2>My Gallery</h2>
 
-        <p>
+    <p>
 
-          Stay connected with us and share our happiness ❤️
+      Beautiful moments captured forever ❤️
 
-        </p>
+    </p>
 
-        <div class="social-icons">
+    
 
-          <div class="social-box">
+  </div>
 
-            <a href="https://instagram.com/skrudra573"
-            target="_blank"
-            class="social-icon instagram">
+  <div class="pinterest-gallery">
 
-              <i class="fa-brands fa-instagram"></i>
+    <div class="gallery-item"><img src="weddings/ashirwad.jpg"></div>
+    
+    <div class="gallery-item"><img src="weddings/collage1.jpg"></div>
+    <div class="gallery-item"><img src="weddings/collage2.jpg"></div>
+    <div class="gallery-item"><img src="weddings/collage3.jpg"></div>
+    <div class="gallery-item"><img src="weddings/collage4.jpg"></div>
+    <div class="gallery-item"><img src="weddings/collage5.jpg"></div>
+    <div class="gallery-item"><img src="weddings/collage6.jpg"></div>
+    <div class="gallery-item"><img src="weddings/1000072633.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engagement1.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engagement5.jpg"></div>
+    <div class="gallery-item"><img src="weddings/stage1.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 10.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 12.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 13.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 14.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 15.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 16.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage 17.jpg"></div>
+    <div class="gallery-item"><img src="weddings/engage9 family.jpg"></div>
+    <div class="gallery-item"><img src="weddings/baraat.jpg"></div>
+    <div class="gallery-item"><img src="weddings/home1.jpg"></div>
+    <div class="gallery-item"><img src="weddings/jijaji.jpg"></div>
+    <div class="gallery-item"><img src="weddings/pahla din tel.jpg"></div>
+    
 
-            </a>
+  </div>
 
-            <div class="social-label">Instagram</div>
+</div>
 
-          </div>
+</section>
 
-          <div class="social-box">
+<!-- STORY -->
 
-            <a href="https://facebook.com/aashish.ahirwar.144"
-            target="_blank"
-            class="social-icon facebook">
+<section id="story">
 
-              <i class="fa-brands fa-facebook-f"></i>
+<div class="container">
 
-            </a>
+  <div class="section-title">
 
-            <div class="social-label">Facebook</div>
+    <h2>Our Beautiful Story</h2>
 
-          </div>
+    <p>Every love story is beautiful ❤️</p>
 
-          <div class="social-box">
+  </div>
 
-            <a href="https://wa.me/918085456506"
-            target="_blank"
-            class="social-icon whatsapp">
+  <div class="story-wrapper">
 
-              <i class="fa-brands fa-whatsapp"></i>
+    <div class="story-img">
 
-            </a>
-
-            <div class="social-label">WhatsApp</div>
-
-          </div>
-
-        </div>
-
-      </div>
+      <img src="weddings/engagement3.jpg">
 
     </div>
 
-  </section>
+    <div class="story-content">
 
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container">
-
-      <h2>Sanjay & Bebi</h2>
+      <h3>How We Met</h3>
 
       <p>
 
-        Thank you for celebrating our special day with us ❤️
+        Sanjay and Bebi met during a college event.
+        What started as friendship slowly became forever love.
+
+      </p>
+
+      <p>
+
+        Through laughter and support,
+        we discovered a beautiful journey together.
 
       </p>
 
     </div>
 
-  </footer>
+  </div>
 
-  <!-- LIGHTBOX -->
+</div>
 
-  <div class="lightbox" id="lightbox">
+</section>
 
-    <span class="close-lightbox" id="closeLightbox">
+<!-- HIGHLIGHTS -->
 
-      &times;
+<section id="highlights" class="gradient-section">
 
-    </span>
+<div class="container">
+
+  <div class="section-title">
+
+    <h2>Wedding Highlights</h2>
+
+  </div>
+
+  <div class="highlight-grid">
+
+    <div class="highlight-card card-preview">
+
+      <img src="weddings/all friends.jpg">
+       <img src="weddings/some friends.jpg">
+       <img src="weddings/mitra1.jpg">
+       <img src="weddings/home friends.jpg">
+
+      <div class="highlight-content">
+
+        <h3>Yaaron ki Toli</h3>
+
+      </div>
+
+    </div>
+
+    <div class="highlight-card card-preview">
+
+      <img src="weddings/lagun1.jpg">
+      <img src="weddings/lagun2.jpg">
+      <img src="weddings/pakyat.jpg">
+      <img src="weddings/pakyat2.jpg">
+
+      <div class="highlight-content">
+
+        <h3>Lagun Pakyaat</h3>
+
+      </div>
+
+    </div>
+
+    <div class="highlight-card card-preview">
+
+      <img src="weddings/rings.jpg">
+      <img src="weddings/engagement2.jpg">
+      <img src="weddings/engagement4.jpg">
+      <img src="weddings/engage 11.jpg">
+
+      <div class="highlight-content">
+        <h3>Ring ceremony</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+<div class="container">
+
+  <div class="section-title">
+
+    <h2>Special Memories</h2>
+
+  </div>
+
+  <div class="memory-wrapper">
+
+    <div class="memory-card">
+
+      <i class="fa-solid fa-camera"></i>
+
+      <h3>Photography</h3>
+
+    </div>
+
+    <div class="memory-card">
+
+      <i class="fa-solid fa-music"></i>
+
+      <h3>Music & Dance</h3>
+
+    </div>
+
+    <div class="memory-card">
+
+      <i class="fa-solid fa-heart"></i>
+
+      <h3>Love Forever</h3>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- WEDDING CARD -->
+
+<section id="wedding-card" class="gradient-section">
+
+<div class="container">
+
+  <div class="section-title">
+
+    <h2>Wedding Invitation Card</h2>
+
+  </div>
+
+  <div class="wedding-card-wrapper">
+
+    <div class="wedding-card-item card-preview">
+
+      <img src="images/first invite.png">
+
+    </div>
+
+    <div class="wedding-card-item card-preview">
+
+      <img src="images/second invite.png">
+
+    </div>
+
+    <div class="wedding-card-item card-preview">
+
+      <img src="images/third invite.png">
+
+    </div>
+
+    <div class="wedding-card-item card-preview">
+
+      <img src="images/last invite.png">
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- SOCIAL -->
+
+<section class="gradient-section" id="social">
+
+<div class="container">
+
+  <div class="social-wrapper">
+
+    <h2>Follow & Invite Us</h2>
+
+    <p>
+
+      Stay connected with us ❤️
+
+    </p>
+
+    <div class="social-icons">
+
+      <a href="https://instagram.com/skrudra573"
+      target="_blank"
+      class="social-icon instagram">
+
+        <i class="fa-brands fa-instagram"></i>
+
+      </a>
+
+      <a href="https://facebook.com/aashish.ahirwar.144"
+      target="_blank"
+      class="social-icon facebook">
+
+        <i class="fa-brands fa-facebook-f"></i>
+
+      </a>
+
+      <a href="https://wa.me/918085456506"
+      target="_blank"
+      class="social-icon whatsapp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+  <h2>Sanjay & Bebi</h2>
+
+  <p>
+
+    Thank you for celebrating our special day ❤️
+
+  </p>
+
+</div>
+
+</footer>
+
+<!-- ADVANCED LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+  <!-- CLOSE -->
+
+  <span class="close-lightbox" id="closeLightbox">
+
+    &times;
+
+  </span>
+
+  <!-- PREVIOUS -->
+
+  <button class="lightbox-btn prev-btn" id="prevBtn">
+
+    <i class="fa-solid fa-chevron-left"></i>
+
+  </button>
+
+  <!-- IMAGE -->
+
+  <div class="lightbox-content">
 
     <img src="" id="lightboxImg">
 
   </div>
 
-  <!-- JAVASCRIPT -->
+  <!-- NEXT -->
 
-  <script>
+  <button class="lightbox-btn next-btn" id="nextBtn">
 
-    // MOBILE MENU
+    <i class="fa-solid fa-chevron-right"></i>
 
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
+  </button>
 
-    menuBtn.addEventListener('click', () => {
+</div>
 
-      navLinks.classList.toggle('active');
+<!-- JAVASCRIPT -->
 
-    });
+<script>
 
-    // CLOSE MENU AFTER CLICK
+// ===================================
+// MOBILE MENU
+// ===================================
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
+const menuBtn = document.getElementById('menuBtn');
 
-      link.addEventListener('click', () => {
+const navLinks = document.getElementById('navLinks');
 
-        navLinks.classList.remove('active');
+menuBtn.addEventListener('click',()=>{
 
-      });
+  navLinks.classList.toggle('active');
 
-    });
+});
 
-    // LIGHTBOX
+// ===================================
+// SHARE BUTTON
+// ===================================
 
-    const galleryImages = document.querySelectorAll('.gallery-item img, .card-preview img');
+const shareBtn = document.getElementById('shareBtn');
 
-    const lightbox = document.getElementById('lightbox');
+shareBtn.addEventListener('click',async(e)=>{
 
-    const lightboxImg = document.getElementById('lightboxImg');
+  e.preventDefault();
 
-    const closeLightbox = document.getElementById('closeLightbox');
+  if(navigator.share){
 
-    galleryImages.forEach(image => {
+    await navigator.share({
 
-      image.addEventListener('click', () => {
-
-        lightbox.classList.add('active');
-
-        lightboxImg.src = image.src;
-
-      });
-
-    });
-
-    closeLightbox.addEventListener('click', () => {
-
-      lightbox.classList.remove('active');
+      title:'Sanjay Wedding Memories',
+      text:'Check our wedding memories ❤️',
+      url:window.location.href
 
     });
 
-    lightbox.addEventListener('click', (e) => {
+  }
 
-      if(e.target !== lightboxImg){
+});
 
-        lightbox.classList.remove('active');
+// ===================================
+// DARK MODE
+// ===================================
 
-      }
+const themeToggle = document.getElementById('themeToggle');
 
-    });
+themeToggle.addEventListener('click',()=>{
 
-    // SHARE BUTTON
+  document.body.classList.toggle('dark-mode');
 
-    const shareBtn = document.getElementById('shareBtn');
+  if(document.body.classList.contains('dark-mode')){
 
-    shareBtn.addEventListener('click', async (e) => {
+    themeToggle.innerHTML =
+    '<i class="fa-solid fa-sun"></i>';
 
-      e.preventDefault();
+  }else{
 
-      if(navigator.share){
+    themeToggle.innerHTML =
+    '<i class="fa-solid fa-moon"></i>';
 
-        try{
+  }
 
-          await navigator.share({
+});
 
-            title:'Sanjay & Bebi Wedding Memories',
+// ===================================
+// ADVANCED FULLSCREEN GALLERY
+// ===================================
 
-            text:'Check out our wedding memories ❤️',
+const galleryImages = document.querySelectorAll(
+  '.gallery-item img, .card-preview img'
+);
 
-            url:window.location.href
+const lightbox = document.getElementById('lightbox');
 
-          });
+const lightboxImg = document.getElementById('lightboxImg');
 
-        }catch(error){
+const closeLightbox = document.getElementById('closeLightbox');
 
-          console.log(error);
+const nextBtn = document.getElementById('nextBtn');
 
-        }
+const prevBtn = document.getElementById('prevBtn');
 
-      }else{
+let currentIndex = 0;
 
-        navigator.clipboard.writeText(window.location.href);
+// ZOOM SCALE
 
-        alert('Link copied to clipboard!');
+let scale = 1;
 
-      }
+// OPEN LIGHTBOX
 
-    });
+function openLightbox(index){
 
-    // DARK MODE
+  currentIndex = index;
 
-    const themeToggle = document.getElementById('themeToggle');
+  lightbox.classList.add('active');
 
-    themeToggle.addEventListener('click', () => {
+  lightboxImg.src = galleryImages[index].src;
 
-      document.body.classList.toggle('dark-mode');
+  scale = 1;
 
-      if(document.body.classList.contains('dark-mode')){
+  updateZoom();
 
-        themeToggle.innerHTML =
-        '<i class="fa-solid fa-sun"></i>';
+}
 
-      }else{
+// IMAGE CLICK
 
-        themeToggle.innerHTML =
-        '<i class="fa-solid fa-moon"></i>';
+galleryImages.forEach((image,index)=>{
 
-      }
+  image.addEventListener('click',()=>{
 
-    });
+    openLightbox(index);
 
-  </script>
+  });
+
+});
+
+// CLOSE
+
+closeLightbox.addEventListener('click',()=>{
+
+  lightbox.classList.remove('active');
+
+});
+
+// NEXT IMAGE
+
+function showNext(){
+
+  currentIndex++;
+
+  if(currentIndex >= galleryImages.length){
+
+    currentIndex = 0;
+
+  }
+
+  lightboxImg.src = galleryImages[currentIndex].src;
+
+  resetZoom();
+
+}
+
+// PREVIOUS IMAGE
+
+function showPrev(){
+
+  currentIndex--;
+
+  if(currentIndex < 0){
+
+    currentIndex = galleryImages.length - 1;
+
+  }
+
+  lightboxImg.src = galleryImages[currentIndex].src;
+
+  resetZoom();
+
+}
+
+// BUTTON EVENTS
+
+nextBtn.addEventListener('click',showNext);
+
+prevBtn.addEventListener('click',showPrev);
+
+// KEYBOARD SUPPORT
+
+document.addEventListener('keydown',(e)=>{
+
+  if(!lightbox.classList.contains('active')) return;
+
+  if(e.key === 'ArrowRight'){
+
+    showNext();
+
+  }
+
+  if(e.key === 'ArrowLeft'){
+
+    showPrev();
+
+  }
+
+  if(e.key === 'Escape'){
+
+    lightbox.classList.remove('active');
+
+  }
+
+});
+
+// RESET ZOOM
+
+function resetZoom(){
+
+  scale = 1;
+
+  updateZoom();
+
+}
+
+// UPDATE ZOOM
+
+function updateZoom(){
+
+  lightboxImg.style.transform =
+  `scale(${scale})`;
+
+}
+
+// MOUSE WHEEL ZOOM
+
+lightboxImg.addEventListener('wheel',(e)=>{
+
+  e.preventDefault();
+
+  if(e.deltaY < 0){
+
+    scale += 0.15;
+
+  }else{
+
+    scale -= 0.15;
+
+  }
+
+  scale = Math.min(Math.max(1,scale),5);
+
+  updateZoom();
+
+});
+
+// DOUBLE CLICK ZOOM
+
+lightboxImg.addEventListener('dblclick',()=>{
+
+  if(scale === 1){
+
+    scale = 2.5;
+
+  }else{
+
+    scale = 1;
+
+  }
+
+  updateZoom();
+
+});
+
+// TOUCH SWIPE
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+lightbox.addEventListener('touchstart',(e)=>{
+
+  touchStartX = e.changedTouches[0].screenX;
+
+});
+
+lightbox.addEventListener('touchend',(e)=>{
+
+  touchEndX = e.changedTouches[0].screenX;
+
+  if(touchEndX < touchStartX - 50){
+
+    showNext();
+
+  }
+
+  if(touchEndX > touchStartX + 50){
+
+    showPrev();
+
+  }
+
+});
+
+// CLOSE OUTSIDE
+
+lightbox.addEventListener('click',(e)=>{
+
+  if(e.target === lightbox){
+
+    lightbox.classList.remove('active');
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
