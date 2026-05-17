@@ -777,7 +777,8 @@ body.dark-mode .drive-gallery-box{
 
 .social-wrapper{
 
-  text-align:center;
+  text-align: center;
+  margin-bottom: 25px;
 
 }
 
@@ -785,8 +786,9 @@ body.dark-mode .drive-gallery-box{
 
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   flex-wrap:wrap;
+  margin-top: 25px;
 
 }
 
@@ -803,9 +805,9 @@ body.dark-mode .drive-gallery-box{
 
   color:#fff;
 
-  font-size:38px;
+  font-size:50px;
 
-  transition:0.35s;
+  transition:0.30s;
 
 }
 
@@ -831,7 +833,7 @@ body.dark-mode .drive-gallery-box{
 
 .social-icon:hover{
 
-  transform:translateY(-10px);
+  transform:translateY(+10px);
 
 }
 
@@ -893,8 +895,12 @@ footer{
 
   overflow:auto;
   touch-action:pan-x pan-y;
-
   padding:40px;
+  cursor:grab;
+
+  touch-action:none;
+
+  -webkit-overflow-scrolling:touch;
 
 }
 
@@ -1111,17 +1117,11 @@ footer{
   <nav class="nav-links" id="navLinks">
 
     <a href="#home">Home</a>
-
     <a href="#gallery">My Gallery</a>
-
-    <a href="#story">Our Story</a>
-
     <a href="#highlights">Highlights</a>
-
     <a href="#memories">Memories</a>
-
+    <a href="#story">Our Story</a>
     <a href="#wedding-card">Wedding Card</a>
-
     <a href="#social">Follow Me</a>
 
   </nav>
@@ -1284,53 +1284,7 @@ footer{
 
 </section>
 
-<!-- STORY -->
 
-<section id="story">
-
-<div class="container">
-
-  <div class="section-title">
-
-    <h2>Our Beautiful Story</h2>
-
-    <p>Every love story is beautiful ❤️</p>
-
-  </div>
-
-  <div class="story-wrapper">
-
-    <div class="story-img">
-
-      <img src="weddings/engagement3.jpg">
-
-    </div>
-
-    <div class="story-content">
-
-      <h3>How We Met</h3>
-
-      <p>
-
-        Sanjay and Bebi met during a college event.
-        What started as friendship slowly became forever love.
-
-      </p>
-
-      <p>
-
-        Through laughter and support,
-        we discovered a beautiful journey together.
-
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-
-</section>
 
 <!-- HIGHLIGHTS -->
 
@@ -1440,6 +1394,54 @@ footer{
 
 </section>
 
+<!-- STORY -->
+
+<section id="story">
+
+<div class="container">
+
+  <div class="section-title">
+
+    <h2>Our Beautiful Story</h2>
+
+    <p>Every love story is beautiful ❤️</p>
+
+  </div>
+
+  <div class="story-wrapper">
+
+    <div class="story-img">
+
+      <img src="weddings/engagement3.jpg">
+
+    </div>
+
+    <div class="story-content">
+
+      <h3>How We Met</h3>
+
+      <p>
+
+        Sanjay and Bebi met during a college event.
+        What started as friendship slowly became forever love.
+
+      </p>
+
+      <p>
+
+        Through laughter and support,
+        we discovered a beautiful journey together.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
 <!-- WEDDING CARD -->
 
 <section id="wedding-card" class="gradient-section">
@@ -1492,11 +1494,11 @@ footer{
 
   <div class="social-wrapper">
 
-    <h2>Follow & Invite Us</h2>
+    <h2>Follow & Stay Connected with Us ❤️</h2>
 
     <p>
 
-      Stay connected with us ❤️
+      click here and go to my social account
 
     </p>
 
@@ -1540,11 +1542,11 @@ footer{
 
 <div class="container">
 
-  <h2>Sanjay & Bebi</h2>
+  <h2> ❤️ Cherished Wedding Memories ❤️</h2>
 
   <p>
 
-    Thank you for celebrating our special day ❤️
+    ...Thank you for celebrating our special day... 
 
   </p>
 
@@ -1790,6 +1792,12 @@ function resetZoom(){
 
   scale = 1;
 
+  translateX = 0;
+  translateY = 0;
+
+  currentTranslateX = 0;
+  currentTranslateY = 0;
+
   updateZoom();
 
 }
@@ -1801,7 +1809,8 @@ function resetZoom(){
 function updateZoom(){
 
   lightboxImg.style.transform =
-  `scale(${scale})`;
+  `translate(${translateX}px, ${translateY}px)
+   scale(${scale})`;
 
 }
 
@@ -1850,27 +1859,66 @@ lightboxImg.addEventListener('dblclick',()=>{
 let touchStartX = 0;
 let touchEndX = 0;
 
-lightbox.addEventListener('touchstart',(e)=>{
 
-  touchStartX = e.changedTouches[0].screenX;
+// ===================================
+// MOBILE IMAGE DRAG / PAN
+// ===================================
+
+let isDragging = false;
+
+let startX = 0;
+let startY = 0;
+
+let translateX = 0;
+let translateY = 0;
+
+let currentTranslateX = 0;
+let currentTranslateY = 0;
+
+// TOUCH START
+
+lightboxImg.addEventListener('touchstart',(e)=>{
+
+  if(scale <= 1) return;
+
+  isDragging = true;
+
+  startX =
+  e.touches[0].clientX - currentTranslateX;
+
+  startY =
+  e.touches[0].clientY - currentTranslateY;
 
 });
 
-lightbox.addEventListener('touchend',(e)=>{
+// TOUCH MOVE
 
-  touchEndX = e.changedTouches[0].screenX;
+lightboxImg.addEventListener('touchmove',(e)=>{
 
-  if(touchEndX < touchStartX - 50){
+  if(!isDragging || scale <= 1) return;
 
-    showNext();
+  e.preventDefault();
 
-  }
+  translateX =
+  e.touches[0].clientX - startX;
 
-  if(touchEndX > touchStartX + 50){
+  translateY =
+  e.touches[0].clientY - startY;
 
-    showPrev();
+  currentTranslateX = translateX;
+  currentTranslateY = translateY;
 
-  }
+  lightboxImg.style.transform =
+  `scale(${scale})
+   translate(${translateX}px, ${translateY}px)`;
+
+},{ passive:false });
+
+// TOUCH END
+
+lightboxImg.addEventListener('touchend',()=>{
+
+  isDragging = false;
 
 });
 
